@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentasi</title>
+    <script type="text/javascript" src="dist/main.bundle.js"></script>
+</head>
+
+<body>
+    <div id='h5p-container'></div>
+    <script>
+        const el = document.getElementById('h5p-container');
+        const options = {
+            h5pJsonPath: 'isi',
+            frameJs: 'dist/frame.bundle.js',
+            frameCss: 'dist/styles/h5p.css',
+        }
+        new H5PStandalone.H5P(el, options);
+    </script>
+</body>
+
+</html>
