@@ -5,7 +5,7 @@
 
 ; Tentukan nama aplikasi dan versi
 Name "H5P Presentasi"
-OutFile "h5p.exe"
+OutFile "Setup Presentasi H5P.exe"
 InstallDir "C:\h5p"
 InstallDirRegKey HKLM "Software\h5p" "Install_Dir"
 
@@ -91,8 +91,8 @@ Section "MainSection" SEC01
     CreateShortcut "$SMPROGRAMS\H5P\Server H5P.lnk" "C:\h5p\server.exe" "" "C:\h5p\server.exe" 0
     CreateShortCut "$SMPROGRAMS\H5P\H5P Guru.lnk" "http://localhost:3000/guru"
 
-    WriteUninstaller "C:\h5p\uninstall.exe"
-    CreateShortcut "$SMPROGRAMS\H5P\Hapus Aplikasi.lnk" "C:\h5p\uninstall.exe"
+    WriteUninstaller "C:\h5p\Hapus Presentasi H5P.exe"
+    CreateShortcut "$SMPROGRAMS\H5P\Hapus Server H5P.lnk" "C:\h5p\Hapus Presentasi H5P.exe"
 
 SectionEnd
 
@@ -102,6 +102,7 @@ Section "Uninstall"
     Delete "$DESKTOP\H5P Guru.lnk"
     Delete "$SMPROGRAMS\H5P\Server H5P.lnk"
     Delete "$SMPROGRAMS\H5P\H5P Guru.lnk"
+    Delete "$SMPROGRAMS\H5P\Hapus Server H5P.lnk"
     RMDir /r "$SMPROGRAMS\H5P"
     RMDir /r "$INSTDIR"
     ; Finish uninstallation

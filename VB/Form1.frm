@@ -227,7 +227,7 @@ Private Sub Form_Load()
     End If
     
     siswa.Caption = "Siswa : " & ipAddresses & ":3000"
-    guru.Caption = "Guru : " & ipAddresses & ":3000/guru"
+    guru.Caption = "Upload : " & ipAddresses & ":3000/guru"
     server.ForeColor = RGB(255, 0, 0)
     server.Caption = "Server Mati"
     

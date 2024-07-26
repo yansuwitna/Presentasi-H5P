@@ -8,9 +8,9 @@ const app = express();
 const port = 3000;
 
 // Setup multer untuk unggah file
-const upload = multer({ dest: 'uploads/' });
+const upload = multer({ dest: path.join(__dirname, 'uploads') });
 
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
@@ -22,7 +22,7 @@ app.get('/guru', (req, res) => {
 
 app.post('/upload', upload.single('file'), (req, res) => {
     const filePath = req.file.path;
-    const outputDir = 'public/isi';
+    const outputDir = path.join(__dirname, 'public/isi');
 
     // Pastikan direktori output ada
     if (!fs.existsSync(outputDir)) {
