@@ -66,18 +66,18 @@ Section "MainSection" SEC01
         ${If} $ARCHITECTURE == "x64"
             ;StrCpy $0 "node-v14.17.0-x64.msi"
             ;StrCpy $1 "https://nodejs.org/dist/v14.17.0/$0"
-            StrCpy $0 "nodejs-setup64.msi"
+            StrCpy $0 "C:\h5p\nodejs-setup64.msi"
         ${Else}
             ;StrCpy $0 "node-v14.17.0-x86.msi"
             ;StrCpy $1 "https://nodejs.org/dist/v14.17.0/$0"
-            StrCpy $0 "nodejs-setup32.msi"
+            StrCpy $0 "C:\h5p\nodejs-setup32.msi"
         ${EndIf}
         
         ; Download Node.js installer
         ;nsExec::ExecToLog "powershell -command ""& {Invoke-WebRequest -Uri $1 -OutFile $0}"""
         
         ; Install Node.js
-        nsExec::ExecToLog "msiexec /i $0 /quiet"
+        nsExec::ExecToLog "msiexec /i $0"
     ${Else}
         MessageBox MB_OK "Node.js is already installed."
     ${EndIf}
